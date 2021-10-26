@@ -13,6 +13,7 @@ import {useDispatch,useSelector} from "react-redux";
 import {deleteUsers, loadUsers,getUser} from '../redux/action';
 import { ButtonGroup} from '@mui/material';
 import { Button } from '@mui/material';
+import { useHistory } from 'react-router';
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
           backgroundColor: theme.palette.common.black,
@@ -55,6 +56,7 @@ import { Button } from '@mui/material';
         const Home = () => {
             const classes = useStyles();
             let dispatch = useDispatch();
+            let history = useHistory();
             const {users} = useSelector(state =>state.data);
 
             useEffect(()=>{
@@ -72,7 +74,12 @@ import { Button } from '@mui/material';
               }
         return (
         <div>
-            <TableContainer component={Paper}>
+            <div>
+                <div>
+                    <Button variant= "contained" color="primary" onClick={()=>history.push("/addUser")}>Add User</Button>
+                </div>
+            </div>
+        <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
