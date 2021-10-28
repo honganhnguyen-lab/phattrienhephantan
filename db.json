@@ -8,11 +8,18 @@
       "id": 1
     },
     {
-      "name": "Tommy",
+      "name": "Tommy Brown",
       "address": "Japan",
       "email": "tommy@gmail.com",
       "contact": "837866464",
       "id": 2
+    },
+    {
+      "name": "Amy",
+      "email": "amy@gmail.com",
+      "contact": "23456789",
+      "address": "Vietnam",
+      "id": 3
     }
   ]
 }

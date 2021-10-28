@@ -103,7 +103,7 @@ import { useHistory } from 'react-router';
               <StyledTableCell align="center">
               <ButtonGroup variant="contained" aria-label="outlined primary button group">
                      <Button color="warning" onClick={()=>handleDelete(user.id)}>Delete</Button>
-                     <Button color="primary" onClick={()=>handleEdit(user.id)}>Edit</Button>
+                     <Button color="primary" onClick={()=> history.push(`/editUser/${user.id}`)}>Edit</Button>
                      
 </ButtonGroup>
               </StyledTableCell>
