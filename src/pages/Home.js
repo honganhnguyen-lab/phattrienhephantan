@@ -14,6 +14,7 @@ import {deleteUsers, loadUsers,getUser} from '../redux/action';
 import { ButtonGroup} from '@mui/material';
 import { Button } from '@mui/material';
 import { useHistory } from 'react-router';
+
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
           backgroundColor: theme.palette.common.black,
@@ -58,7 +59,6 @@ import { useHistory } from 'react-router';
             let dispatch = useDispatch();
             let history = useHistory();
             const {users} = useSelector(state =>state.data);
-
             useEffect(()=>{
                 dispatch(loadUsers());
             },[]);
@@ -73,7 +73,9 @@ import { useHistory } from 'react-router';
                 
               }
         return (
+          
         <div>
+          
             <div>
                 <div>
                     <Button variant= "contained" color="primary" onClick={()=>history.push("/addUser")}>Add User</Button>
@@ -92,8 +94,10 @@ import { useHistory } from 'react-router';
           </TableRow>
         </TableHead>
         <TableBody>
-          {users && users.map((user) => (
+          { users && users.map((user) => (
+           
             <StyledTableRow key={user.id}>
+              
               <StyledTableCell component="th" scope="row">
                 {user.name}
               </StyledTableCell>

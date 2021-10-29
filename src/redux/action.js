@@ -19,6 +19,14 @@ const userAdd = ()=>({
 const userUpdate = ()=>({
     type:types.UPDATE_USER,
 })
+//Account
+const getAccount =(accounts)=>({
+    type:types.CHECK_ACCOUNT,
+    payload:accounts,
+})
+const postAccount= ()=>({
+    type:types.POST_ACCOUNT,
+})
 
 export const loadUsers =() =>{
     return function (dispatch){
@@ -66,6 +74,24 @@ export const updateUser = (user,id)=>{
         axios.put(`${process.env.REACT_APP_API}/${id}`,user)
         .then((resp)=>{
             dispatch(userUpdate());
+        })
+    }
+}
+//Account
+export const addAccount =(account)=>{
+    return function (dispatch){
+        axios.post("http://localhost:5001/account",account)
+        .then((resp)=>{
+            dispatch(postAccount(resp.data));
+        })
+    }
+}
+
+export const loadAccount = (account)=>{
+    return function (dispatch){
+        axios.get("http://localhost:5001/account")
+        .then((resp)=>{
+            dispatch(getAccount(resp.data));
         })
     }
 }

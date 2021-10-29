@@ -3,3 +3,7 @@ export const DELETE_USER = "DELETE_USER";
 export const GET_USER = "GET_USER";
 export const ADD_USER = "ADD_USER";
 export const UPDATE_USER = "UPDATE_USER";
+
+//Account
+export const POST_ACCOUNT = "POST_ACCOUNT";
+export const CHECK_ACCOUNT = "CHECK_ACCOUNT";

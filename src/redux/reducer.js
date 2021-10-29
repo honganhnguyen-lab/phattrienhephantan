@@ -1,5 +1,7 @@
 import * as types from "./actionType";
 const initialState = {
+    account:{},
+    accounts:[],
     users: [],
     user: {},
     loading:true,
@@ -34,9 +36,21 @@ const usersReducers = (state=initialState,action)=>{
                 ...state,
                 loading:false,
             }
+        case types.POST_ACCOUNT:
+            return{
+                ...state,
+                loading:false
+            }
+        case types.CHECK_ACCOUNT:
+                return{
+                    ...state,
+                    accounts:action.payload,
+                    loading:false
+                }
         default:
             return state;
     }
 };
+
 
 export default usersReducers;
