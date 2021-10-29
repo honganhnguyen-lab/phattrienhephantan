@@ -17,14 +17,16 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems} from './listItems';
 import { Avatar } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import Button from '@mui/material/Button';
 
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
-import Deposits from './Deposits';
+import Deposits from './selfInfo';
+import SelfInfo from './selfInfo';
+import HealthInfo from './HealthInfo';
 
 
 
@@ -34,14 +36,14 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  backgroundColor:'#d93c3c',
+  backgroundColor:'black',
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
     marginLeft: drawerWidth,
-    backgroundColor: '#d93c3c',
+    backgroundColor: 'black',
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -160,8 +162,10 @@ function DashboardContent() {
             <IconButton
         sx={{
           padding: 0,
+          marginLeft:'1.5%',
           width: 44,
           height: 44,
+          
           ...(open && {
             '&:before': {
               zIndex: 1,
@@ -193,8 +197,8 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List>{mainListItems}</List>
-          <Divider />
-          <List>{secondaryListItems}</List>
+          
+         
         </Drawer>
         <Box
           component="main"
@@ -212,8 +216,8 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
             
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              {/* Self Info */}
+              <Grid item xs={12} md={12} lg={6}>
                 <Paper
                   sx={{
                     p: 2,
@@ -222,7 +226,20 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  <Deposits />
+                  <SelfInfo/>
+                </Paper>
+              </Grid>
+              {/* Health Info */}
+              <Grid item xs={12} md={12} lg={6}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 240,
+                  }}
+                >
+                  <HealthInfo/>
                 </Paper>
               </Grid>
               </Grid>

@@ -43,25 +43,5 @@ export const mainListItems = (
   </div>
 );
 
- export const secondaryListItems = (
-   
-  <div>
-
-    <ListSubheader inset>Thông báo </ListSubheader>
-    <ListItem button>
-      <IconButton>
-      
-      </IconButton>
-      <ListItemText primary="Nộp tiền học phí" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-     
-      </ListItemIcon>
-      <ListItemText primary="Cập nhật sức khoẻ" />
-    </ListItem>
  
-  </div>
- );
-
  
