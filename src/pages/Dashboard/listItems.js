@@ -11,37 +11,61 @@ import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Avatar } from '@mui/material';
 import { IconButton } from '@mui/material';
+ import { useHistory } from 'react-router';
+ import { Button } from '@mui/material';
+ import { makeStyles } from '@mui/styles';
 
+ const useStyles = makeStyles({
+   button : {
+     borderBlockColor:'black',
+    '&:hover': {
+      backgroundColor:'black'
+  },
+    '&:active':{
+      backgroundColor:'black'
+    }
+   }
 
-export const mainListItems = (
+ })
+const MainListItems = () =>{
+  let history = useHistory();
+  const classes = useStyles()
+  return(
   <div>
-    <ListItem button>
-    <Avatar sx={{ m: 1, bgcolor: 'black',color:'white' }}>
+    
+    <ListItem button className={classes.button} onClick={()=> history.push("/dashboard")}> 
+    <Avatar sx={{ m: 1, bgcolor: 'white',color:'black' }}>
         <PeopleIcon />
     </Avatar>
       <ListItemText primary="Thông tin cá nhân" />
     </ListItem>
-    <ListItem button>
-    <Avatar sx={{ m: 1,  bgcolor: 'black',color:'white' }}>
+    <ListItem button className={classes.button} onClick={()=> history.push("/score")}>
+    <Avatar sx={{ m: 1,  bgcolor: 'white',color:'black' }}>
         <BarChartIcon />
     </Avatar>
       <ListItemText primary="Kết quả học tập" />
     </ListItem>
-    <ListItem button>
-    <Avatar sx={{ m: 1, bgcolor: 'black',color:'white'  }}>
+    <ListItem button className={classes.button} onClick={()=> history.push("/subject")}>
+    <Avatar sx={{ m: 1, bgcolor: 'white',color:'black'  }}>
         <DashboardIcon />
     </Avatar>
       <ListItemText primary="Đăng kí tín chỉ" />
     </ListItem>
     
-    <ListItem button>
-    <Avatar sx={{ m: 1,  bgcolor: 'black',color:'white' }}>
+    <ListItem button className={classes.button} onClick={()=> history.push("/price")}>
+    <Avatar sx={{ m: 1,  bgcolor: 'white',color:'black' }}>
         <LayersIcon />
     </Avatar>
       <ListItemText primary="Dữ liệu học phí" />
     </ListItem>
+    <ListItem button className={classes.button} onClick={()=> history.push("/extraricular")}>
+    <Avatar sx={{ m: 1,  bgcolor: 'white',color:'black' }}>
+        <LayersIcon />
+    </Avatar>
+      <ListItemText primary="Điểm rèn luyện" />
+    </ListItem>
   </div>
 );
 
- 
- 
+}
+ export default MainListItems

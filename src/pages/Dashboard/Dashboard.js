@@ -10,23 +10,17 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems} from './listItems';
+import MainListItems from './listItems';
 import { Avatar } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import Button from '@mui/material/Button';
 
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-
-import Deposits from './selfInfo';
-import SelfInfo from './selfInfo';
-import HealthInfo from './HealthInfo';
+import ContainerInfo from './ContainerInfo';
+import ContainerScore from './ContainerScore';
 
 
 
@@ -36,14 +30,14 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  backgroundColor:'black',
+  backgroundColor:'#9d1010',
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
     marginLeft: drawerWidth,
-    backgroundColor: 'black',
+    backgroundColor: '#9d1010',
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -57,8 +51,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     '& .MuiDrawer-paper': {
       position: 'relative',
       whiteSpace: 'nowrap',
-      backgroundColor:'white',
-      color:'black',
+      backgroundColor:'#4e0303fa',
+      color:'white',
       width: drawerWidth,
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
@@ -67,6 +61,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       boxSizing: 'border-box',
       ...(!open && {
         overflowX: 'hidden',
+        backgroundColor:'#4e0303fa',
         transition: theme.transitions.create('width', {
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.leavingScreen,
@@ -128,10 +123,11 @@ function DashboardContent() {
   };
 
   return (
-    <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar position="absolute" backgroundColor="black" open={open}>
+    // <ThemeProvider theme={mdTheme}>
+      // <Box sx={{ display: 'flex' }}>
+      //   <CssBaseline />
+      <>
+        <AppBar position="absolute" backgroundcolor="black" open={open}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -196,58 +192,15 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List>{mainListItems}</List>
+          <List>
+            <MainListItems/>
+          </List>
           
          
         </Drawer>
-        <Box
-          component="main"
-          sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
-            flexGrow: 1,
-            height: '100vh',
-            overflow: 'auto',
-          }}
-        >
-          <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-            
-              {/* Self Info */}
-              <Grid item xs={12} md={12} lg={6}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <SelfInfo/>
-                </Paper>
-              </Grid>
-              {/* Health Info */}
-              <Grid item xs={12} md={12} lg={6}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <HealthInfo/>
-                </Paper>
-              </Grid>
-              </Grid>
-           
-          </Container>
-        </Box>
-      </Box>
-    </ThemeProvider>
+     </>
+      // {/* </Box> */}
+    // </ThemeProvider>
   );
 }
 

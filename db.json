@@ -33,5 +33,136 @@
       "password": "123",
       "id": 2
     }
+  ],
+  "info": [
+    {
+      "address": " Hà Nội",
+      "phone": "097123456",
+      "birthday": "2000-10-29",
+      "id": 1
+    }
+  ],
+  "transcript":[
+    {
+      "id":1,
+      "name": "Toán rời rạc ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    },
+    {
+      "id":2,
+      "name": "Giải tích I ",
+      "midterm": 7,
+      "endterm": 5.5,
+      "endpoint": 6.0,
+      "point": "C"
+    },
+    {
+      "id":3,
+      "name": "Giải tích II ",
+      "midterm": 9,
+      "endterm": 9,
+      "endpoint": 9.0,
+      "point": "A"
+    },
+    {
+      "id":4,
+      "name": "Cơ sở dữ liệu ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    },
+    {
+      "id":5,
+      "name": "Project I ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    },
+    {
+      "id":6,
+      "name": "Quốc phòng ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    },
+    {
+      "id":7,
+      "name": "Nhập môn Java ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    },
+    {
+      "id":8,
+      "name": "Kiến trúc máy tính ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    },
+    {
+      "id":9,
+      "name": "Tiếng Anh A ",
+      "midterm": 6.5,
+      "endterm": 6.5,
+      "endpoint": 6.5,
+      "point": "C+"
+    },
+    {
+      "id":10,
+      "name": "Xử lý ảnh ",
+      "midterm": 5,
+      "endterm": 5,
+      "endpoint": 5.0,
+      "point": "C"
+    },
+    {
+      "id":11,
+      "name": "Hệ phân tán ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    },
+    {
+      "id":12,
+      "name": "Xử lý tín hiệu số ",
+      "midterm": 9,
+      "endterm": 10,
+      "endpoint": 9.7,
+      "point": "A+"
+    },
+    {
+      "id":13,
+      "name": "Xác suất thống kê ",
+      "midterm": 8,
+      "endterm": 4.5,
+      "endpoint":5.55 ,
+      "point": "D+"
+    },
+    {
+      "id":14,
+      "name": "Linux và phần mềm mã nguồn mở ",
+      "midterm": 4,
+      "endterm": 4,
+      "endpoint": 4.0,
+      "point": "D"
+    },
+    {
+      "id":15,
+      "name": "Cấu trúc dữ liệu và giải thuật ",
+      "midterm": 7,
+      "endterm": 7,
+      "endpoint": 7.0,
+      "point": "B"
+    }
   ]
+
 }

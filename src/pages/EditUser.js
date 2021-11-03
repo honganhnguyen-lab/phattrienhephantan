@@ -20,6 +20,7 @@ const EditUser = () => {
     });
     let {id}= useParams();
     const {user } = useSelector((state)=>state.data);
+    console.log(user);
     const [error,setError] = useState("")
     let history = useHistory();
     let dispatch = useDispatch();

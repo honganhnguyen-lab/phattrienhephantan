@@ -1,4 +1,3 @@
-
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -18,6 +17,8 @@ import {useHistory} from 'react-router-dom';
 import { addUser, loadAccount } from '../redux/action';
 import Image from "material-ui-image";
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
+import Snackbar from '@mui/material/Snackbar';
+import { Alert } from '@mui/material';
 
 const Login = () => {
     const [state,setState] =useState({
@@ -25,7 +26,20 @@ const Login = () => {
         password:"",
     });
     const {email,password}= state;
+    const [snackbar,setSnackbar] = useState({
+      open: false,
+    vertical: 'top',
+    horizontal: 'center',
+    })
+    const { vertical, horizontal, open } = snackbar;
 
+  const handleClick = () => () => {
+    setSnackbar({ open: true,  vertical: 'top',horizontal: 'center' });
+  };
+
+  const handleClose = () => {
+    setSnackbar({  vertical: 'top',horizontal: 'center', open: false });
+  };
     
     let history = useHistory();
     let dispatch = useDispatch();
@@ -39,25 +53,28 @@ const Login = () => {
         let {name,value}= e.target;
         setState({...state,[name]:value})
     }
+    
+
     const [error,setError] = useState("");
     const account = accounts.find((_account)=>_account.email === email);
     const handleSubmit =(e)=>{
-        
         e.preventDefault();
          if(!account){
              setError("Please input all field")
+             
          }else{
-         if(account.password === password){
+         if(account.password !== password){
+          setError("Wrong email or wrong password");
+        }else{
+            
             dispatch(loadAccount(state));
             history.push("/dashboard");
-            setError("");
-        }else{
-            setError("Wrong email or wrong password");
+            setError("Login success");
         }
          }
         
     };
-
+  
 
 const theme = createTheme();
   return (
@@ -78,6 +95,18 @@ const theme = createTheme();
           <Typography component="h1" variant="h5">
             LOGIN
           </Typography>
+        
+          {error && 
+          <Snackbar severity="error"
+        anchorOrigin={{vertical, horizontal}}
+        open={open}
+        onClose={handleClose}
+        // message={error}
+      >
+          <Alert severity="error">{error}</Alert>
+          </Snackbar>
+          }
+          {/* {error && <h3 style={{color:"red"}}>{error}</h3>} */}
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -111,7 +140,10 @@ const theme = createTheme();
               
               variant="contained"
               sx={{ mt: 3, mb: 2,bgcolor:'#8c1514' }}
-              onClick={handleSubmit}
+              onClick={handleClick({
+                vertical: 'top',
+                horizontal: 'center',
+              })}
             >
               Sign In
             </Button>

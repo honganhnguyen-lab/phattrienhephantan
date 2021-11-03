@@ -4,7 +4,11 @@ const initialState = {
     accounts:[],
     users: [],
     user: {},
+    infos:[],
+    info:{},
     loading:true,
+    transcripts:[],
+    transcript:{},
 }
 
 const usersReducers = (state=initialState,action)=>{
@@ -42,11 +46,28 @@ const usersReducers = (state=initialState,action)=>{
                 loading:false
             }
         case types.CHECK_ACCOUNT:
-                return{
-                    ...state,
-                    accounts:action.payload,
-                    loading:false
-                }
+            return{
+                ...state,
+                accounts:action.payload,
+                loading:false
+            }
+        case types.GET_STUDENT :
+            return {
+                ...state,
+                infos: action.payload,
+                loading:false,
+            }
+        case types.UPDATE_STUDENT :
+            return {
+                ...state,
+                loading:false,
+            }
+        case types.GET_TRANSCRIPTS :
+            return{
+                ...state,
+                transcripts: action.payload,
+                loading:false,
+            }
         default:
             return state;
     }

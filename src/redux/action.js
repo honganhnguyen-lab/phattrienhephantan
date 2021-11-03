@@ -27,6 +27,19 @@ const getAccount =(accounts)=>({
 const postAccount= ()=>({
     type:types.POST_ACCOUNT,
 })
+//Student Info
+const getInfo = (infos)=>({
+    type:types.GET_STUDENT,
+    payload:infos,
+})
+const updateInfo = ()=>({
+    type:types.UPDATE_STUDENT,
+})
+//transcript
+const transGet = (transcripts)=>({
+    type:types.GET_TRANSCRIPTS,
+    payload:transcripts,
+})
 
 export const loadUsers =() =>{
     return function (dispatch){
@@ -95,3 +108,36 @@ export const loadAccount = (account)=>{
         })
     }
 }
+
+//Student
+export const getStudent = ()=>{
+    return function(dispatch){
+        axios.get("http://localhost:5001/info")
+        .then((resp)=>{
+            dispatch(getInfo(resp.data));
+        })
+        .catch((error)=>console.log(error));
+    }
+}
+export const updateStudent= (info)=>{
+    return function(dispatch){
+        axios.put("http://localhost:5001/info/1",info)
+        .then((resp)=>{
+            dispatch(updateInfo());
+        })
+        .catch((error)=>console.log(error));
+    }
+}
+
+//transcript
+export const getTranscripts = ()=>{
+    return function(dispatch){
+        axios
+        .get("http://localhost:5001/transcript")
+        .then((resp)=>{
+            console.log(resp.data);
+            dispatch(transGet(resp.data));
+        })
+    }
+}
+
