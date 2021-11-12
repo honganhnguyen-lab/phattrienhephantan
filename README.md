@@ -1,1 +1,1 @@
-Phát triển phần mềm hệ phân 
+Phát triển phần mềm hệ phân tán
