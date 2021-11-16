@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 PTPMPT-Group3-chatApp
 Source code phát triển phần mềm hệ phân tán - nhóm 8.
 
@@ -13,4 +13,9 @@ Tên đề tài:
 Hệ thống quản lý học tập của sinh viên và đăng ký tín chỉ 
 =======
 Phát triển phần mềm hệ phân tán
->>>>>>> 51fcbc75b926c51b404abc99f86d0f3d3216676a
+
+Các thư viện sử dụng:
+FRONT_END: REACTJS - sử dụng thư viện Material-UI
+=======
+BACK_END: 
+=======
