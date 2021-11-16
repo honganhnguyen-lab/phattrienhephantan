@@ -14,8 +14,9 @@ Hệ thống quản lý học tập của sinh viên và đăng ký tín chỉ
 =======
 Phát triển phần mềm hệ phân tán
 
-Các thư viện sử dụng:
+CÁC THƯ VIỆN VÀ NGÔN NGỮ SỬ DỤNG
+=======
 FRONT_END: REACTJS - sử dụng thư viện Material-UI
-=======
+
 BACK_END: 
-=======
+
