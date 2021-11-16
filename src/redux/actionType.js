@@ -10,7 +10,16 @@ export const CHECK_ACCOUNT = "CHECK_ACCOUNT";
 
 //Info Student
 export const GET_STUDENT = "GET_STUDENT";
-export const UPDATE_STUDENT= "UPDATE_STUDENT";
+export const UPDATE_STUDENT = "UPDATE_STUDENT";
 
 //Transcript
 export const GET_TRANSCRIPTS = "GET_TRANSCRIPTS";
+
+//Subject
+export const GET_SUBJECTS = "GET_SUBJECTS";
+export const GET_SUB = "GET_SUB";
+
+//Regis
+export const ADD_REGIS = "ADD_REGIS";
+export const GET_REGIS = "GET_REGIS";
+export const DELETE_REGIS = "DELETE_REGIS";

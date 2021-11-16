@@ -42,73 +42,73 @@
       "id": 1
     }
   ],
-  "transcript":[
+  "transcript": [
     {
-      "id":1,
+      "id": 1,
       "name": "Toán rời rạc ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     },
     {
-      "id":2,
+      "id": 2,
       "name": "Giải tích I ",
       "midterm": 7,
       "endterm": 5.5,
-      "endpoint": 6.0,
+      "endpoint": 6,
       "point": "C"
     },
     {
-      "id":3,
+      "id": 3,
       "name": "Giải tích II ",
       "midterm": 9,
       "endterm": 9,
-      "endpoint": 9.0,
+      "endpoint": 9,
       "point": "A"
     },
     {
-      "id":4,
+      "id": 4,
       "name": "Cơ sở dữ liệu ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     },
     {
-      "id":5,
+      "id": 5,
       "name": "Project I ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     },
     {
-      "id":6,
+      "id": 6,
       "name": "Quốc phòng ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     },
     {
-      "id":7,
+      "id": 7,
       "name": "Nhập môn Java ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     },
     {
-      "id":8,
+      "id": 8,
       "name": "Kiến trúc máy tính ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     },
     {
-      "id":9,
+      "id": 9,
       "name": "Tiếng Anh A ",
       "midterm": 6.5,
       "endterm": 6.5,
@@ -116,23 +116,23 @@
       "point": "C+"
     },
     {
-      "id":10,
+      "id": 10,
       "name": "Xử lý ảnh ",
       "midterm": 5,
       "endterm": 5,
-      "endpoint": 5.0,
+      "endpoint": 5,
       "point": "C"
     },
     {
-      "id":11,
+      "id": 11,
       "name": "Hệ phân tán ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     },
     {
-      "id":12,
+      "id": 12,
       "name": "Xử lý tín hiệu số ",
       "midterm": 9,
       "endterm": 10,
@@ -140,29 +140,104 @@
       "point": "A+"
     },
     {
-      "id":13,
+      "id": 13,
       "name": "Xác suất thống kê ",
       "midterm": 8,
       "endterm": 4.5,
-      "endpoint":5.55 ,
+      "endpoint": 5.55,
       "point": "D+"
     },
     {
-      "id":14,
+      "id": 14,
       "name": "Linux và phần mềm mã nguồn mở ",
       "midterm": 4,
       "endterm": 4,
-      "endpoint": 4.0,
+      "endpoint": 4,
       "point": "D"
     },
     {
-      "id":15,
+      "id": 15,
       "name": "Cấu trúc dữ liệu và giải thuật ",
       "midterm": 7,
       "endterm": 7,
-      "endpoint": 7.0,
+      "endpoint": 7,
       "point": "B"
     }
+  ],
+  "subject": [
+    {
+      "id": "AB10",
+      "subject": "An toàn và bảo mật thông tin",
+      "teacher": "THS.Bùi Trọng Tùng",
+      "timing": "Fri 4PM-5:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 2
+    },
+    {
+      "id": "IT20",
+      "subject": " Project II",
+      "teacher": "THS. Nguyen Van B",
+      "timing": "Mon 12:30PM-3PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 3
+    },
+    {
+      "id": "IT30",
+      "subject": " Project III",
+      "teacher": "THS. Nguyen Van C",
+      "timing": "Wed 3PM-4:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 3
+    },
+    {
+      "id": "GT10",
+      "subject": " Giai tich 1",
+      "teacher": "THS. Nguyen Van D",
+      "timing": "Tue 4PM-5:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 4
+    },
+    {
+      "id": "GT20",
+      "subject": " Giai tich 2",
+      "teacher": "THS. Nguyen Van E",
+      "timing": "Thu 4PM-5:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 3
+    },
+    {
+      "id": "GT21",
+      "subject": " Giai tich 2",
+      "teacher": "THS. Nguyen Van E",
+      "timing": "Thu 4PM-5:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 2
+    },
+    {
+      "id": "IT7",
+      "subject": " Giai tich 2",
+      "teacher": "THS. Nguyen Van E",
+      "timing": "Thu 4PM-5:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 2
+    },
+    {
+      "id": "IT8",
+      "subject": " Giai tich 2",
+      "teacher": "THS. Nguyen Van E",
+      "timing": "Thu 4PM-5:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 2
+    }
+  ],
+  "regis": [
+    {
+      "occupation": "IT30",
+      "id": 4
+    },
+    {
+      "occupation": "GT270",
+      "id": 5
+    }
   ]
-
 }
