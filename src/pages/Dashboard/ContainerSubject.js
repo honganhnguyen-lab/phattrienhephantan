@@ -42,7 +42,7 @@ const ContainerSubject = () => {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container>
-              <Grid item xs={8} paddingRight={5}>
+              <Grid item xs={8} paddingRight={4}>
                 <InfoSub />
               </Grid>
               <Grid item xs={4}>

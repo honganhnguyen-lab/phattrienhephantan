@@ -99,13 +99,13 @@ const InfoSub = () => {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                       <Box sx={{ margin: 1 }}>
                         <Typography variant="h6" gutterBottom component="div">
-                          Thong tin thay co
+                          Thông tin thầy cô
                         </Typography>
                         <Table size="small" aria-label="purchases">
                           <TableHead>
                             <TableRow>
-                              <TableCell>Ten giang vien</TableCell>
-                              <TableCell>Bo mon</TableCell>
+                              <TableCell>Tên giảng viên</TableCell>
+                              <TableCell>Bộ môn</TableCell>
                               <TableCell align="right">Amount</TableCell>
                             </TableRow>
                           </TableHead>

@@ -9,6 +9,9 @@ import {
   Button,
   CardHeader,
   FormControl,
+  ListItemText,
+  MenuList,
+  TextField
 } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { regisAdd, loadRegis } from "../../../redux/action";
@@ -17,25 +20,32 @@ import { Formik, Form } from "formik";
 //Data
 const initialValues = {
   occupation: "",
+  credits : '',
 };
 
 const options = [
-  { label: "AB10-An toàn và bảo mật thông tin", value: "AB10", credits: 3 },
-  { label: "IT20-ProjectII", value: "IT20", credits: 3 },
-  { label: "IT30-ProjectIII", value: "IT30", credits: 3 },
-  { label: "GT10-Giải tích I", value: "GT10", credits: 3 },
-  { label: "GT20-Giải tích II", value: "GT20", credits: 3 },
-  { label: "GT21-Giải tích II", value: "GT21", credits: 3 },
-  { label: "GT270-Giải tích II", value: "GT270", credits: 3 },
-  { label: "GT80-Giải tích II", value: "GT80", credits: 3 },
+  {id:1, label: "AB10-An toàn thông tin", value: "AB10", credits: 2 },
+  {id:2, label: "IT20-ProjectII", value: "IT20", credits: 3 },
+  {id:3, label: "IT30-ProjectIII", value: "IT30", credits: 3 },
+  {id:4, label: "GT10-Giải tích I", value: "GT10", credits: 4 },
+  {id:5, label: "GT20-Giải tích II", value: "GT20", credits: 3 },
+  {id:6, label: "GT21-Giải tích II", value: "GT21", credits: 2 },
+  {id:7, label: "GT270-Giải tích II", value: "GT270", credits: 2 },
+  {id:8, label: "GT80-Giải tích II", value: "GT80", credits: 2 },
 ];
+
 const InfoTeach = () => {
   let dispatch = useDispatch();
   const onSubmit = (values) => {
+    const setValues = options.find(v=>v.value === values.occupation);
+    values.credits = setValues.credits;
     dispatch(regisAdd(values));
     dispatch(loadRegis());
-    console.log(values);
+    
   };
+
+  
+  
 
   return (
     <Grid container justifyContent="center" spacing={1}>
@@ -72,14 +82,17 @@ const InfoTeach = () => {
                           >
                             <MenuItem>None</MenuItem>
                             {options.map((item) => (
+                              
                               <MenuItem key={item.value} value={item.value}>
                                 {item.label}
+                                
                               </MenuItem>
+                             
+                              
+                              
                             ))}
                           </Select>
-                          {/* <TextField aria-hidden value={values.credit}>
-                            3
-                          </TextField> */}
+                          
                         </FormControl>
                         <Button
                           disabled={!dirty || !isValid}

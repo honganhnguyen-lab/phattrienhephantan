@@ -171,7 +171,7 @@
       "teacher": "THS.Bùi Trọng Tùng",
       "timing": "Fri 4PM-5:30PM",
       "faculty": "Truyền thông và mạng máy tính",
-      "credit": 2
+      "credit": 3
     },
     {
       "id": "IT20",
@@ -179,7 +179,7 @@
       "teacher": "THS. Nguyen Van B",
       "timing": "Mon 12:30PM-3PM",
       "faculty": "Truyền thông và mạng máy tính",
-      "credit": 3
+      "credit": 4
     },
     {
       "id": "IT30",
@@ -187,57 +187,48 @@
       "teacher": "THS. Nguyen Van C",
       "timing": "Wed 3PM-4:30PM",
       "faculty": "Truyền thông và mạng máy tính",
-      "credit": 3
+      "credit": 4
     },
     {
       "id": "GT10",
-      "subject": " Giai tich 1",
+      "subject": " Giải tích 1",
       "teacher": "THS. Nguyen Van D",
       "timing": "Tue 4PM-5:30PM",
+      "faculty": "Truyền thông và mạng máy tính",
+      "credit": 5
+    },
+    {
+      "id": "GT20",
+      "subject": " Giải tích 2",
+      "teacher": "THS. Nguyen Van E",
+      "timing": "Thu 4PM-5:30PM",
       "faculty": "Truyền thông và mạng máy tính",
       "credit": 4
     },
     {
-      "id": "GT20",
-      "subject": " Giai tich 2",
+      "id": "GT21",
+      "subject": " Giải tích 2",
       "teacher": "THS. Nguyen Van E",
       "timing": "Thu 4PM-5:30PM",
       "faculty": "Truyền thông và mạng máy tính",
       "credit": 3
     },
     {
-      "id": "GT21",
-      "subject": " Giai tich 2",
-      "teacher": "THS. Nguyen Van E",
-      "timing": "Thu 4PM-5:30PM",
-      "faculty": "Truyền thông và mạng máy tính",
-      "credit": 2
-    },
-    {
       "id": "IT7",
-      "subject": " Giai tich 2",
+      "subject": " Giải tích 2",
       "teacher": "THS. Nguyen Van E",
       "timing": "Thu 4PM-5:30PM",
       "faculty": "Truyền thông và mạng máy tính",
-      "credit": 2
+      "credit": 3
     },
     {
       "id": "IT8",
-      "subject": " Giai tich 2",
+      "subject": " Giải tích 2",
       "teacher": "THS. Nguyen Van E",
       "timing": "Thu 4PM-5:30PM",
       "faculty": "Truyền thông và mạng máy tính",
-      "credit": 2
+      "credit": 3
     }
   ],
-  "regis": [
-    {
-      "occupation": "IT30",
-      "id": 4
-    },
-    {
-      "occupation": "GT270",
-      "id": 5
-    }
-  ]
+  "regis": []
 }
