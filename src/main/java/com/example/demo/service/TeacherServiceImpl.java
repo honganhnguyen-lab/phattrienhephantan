@@ -11,7 +11,8 @@ public class TeacherServiceImpl implements TeacherService {
 
     static
     {
-        teachers.add(new Teacher(1, "Nguyễn Thị Mơ", "mongmo@gmail.com","0987654321","avatar.img"));
+        teachers.add(new Teacher(1, "Nguyễn Thị Mơ", "mongmo@gmail.com","0987654321","avatarmo.img"));
+        teachers.add(new Teacher(2, "Nguyễn Hoa ", "hoa123@gmail.com","0987623321","avatarhoa.img"))
 
     }
 }
