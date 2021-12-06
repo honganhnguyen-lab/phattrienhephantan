@@ -7,7 +7,7 @@ GVHD: TS. Nguyễn Nhất Hải
 Thành viên trong nhóm
 Nguyễn Tiểu Anh - 20187217
 Nguyễn Hồng Anh - 20187212
-Trần Việt Nga 
+Trần Việt Nga - 20187331
 
 Tên đề tài:
 Hệ thống quản lý học tập của sinh viên và đăng ký tín chỉ 
