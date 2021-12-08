@@ -1,91 +1,134 @@
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell,{ tableCellClasses }  from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
-import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+import React, { useEffect } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  tableCellClasses,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Stack,
+  Button,
+  IconButton,
+  Typography,
+  Collapse,
+} from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { styled } from "@mui/material/styles";
+import { Box } from "@mui/system";
+import { useDispatch, useSelector } from "react-redux";
+import { loadSubjects } from "../../../redux/action";
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.common.black,
-      color: theme.palette.common.white,
-    },
-    [`&.${tableCellClasses.body}`]: {
-      fontSize: 14,
-    },
-  }));
-  
-const rows = [
-  createData('IT1000','Project I', 6.0),
-  createData('IT1001','Nhập môn Java', 9.0),
-  createData('IT1002', 'Hệ hỗ trợ quyết định', 16.0),
-  createData('IT1003', 'Tiếng anh', 3.7),
-  createData('IT1004', "Python", 16.0),
-];
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
 
-export default function InfoSub() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+const InfoSub = () => {
+  let dispatch = useDispatch();
+  const { subjects } = useSelector((state) => state.data);
+  useEffect(() => {
+    dispatch(loadSubjects());
+  }, []);
 
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-  
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
-  
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
+  const [open, setOpen] = React.useState(false);
+  const onOpenButton = (id) => {
+    setOpen(!open);
+    console.log(id);
+  };
+  // const DropButton = (id) => {
+  //   return (
+  //     <IconButton
+  //       aria-label="expand row"
+  //       size="small"
+  //       onClick={() => setOpen(!open)}
+  //     >
+  //       {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+  //     </IconButton>
+  //   );
+  // };
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Mã môn</StyledTableCell>
-            <StyledTableCell align="center">Tên môn</StyledTableCell>
-            <StyledTableCell align="center">Thời gian học</StyledTableCell>
-            <StyledTableCell/>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="center">{row.calories}</TableCell>
-              <TableCell align="center">{row.fat}</TableCell>
-              <TableCell>
-                  <SpeedDialIcon button onClick={handleClick}/>
-            </TableCell>
-
+    <Stack direction="row" spacing={2}>
+      <TableContainer sx={{ paddingLeft: "10px" }}>
+        <Table
+          stickyHeader
+          aria-label="sticky table"
+          border={1}
+          style={{
+            borderWidth: "2px",
+            borderColor: "#aaaaaa",
+            borderStyle: "solid",
+          }}
+        >
+          <TableHead>
+            <TableRow>
+              <StyledTableCell />
+              <StyledTableCell>Mã môn</StyledTableCell>
+              <StyledTableCell align="center">Tên môn</StyledTableCell>
+              <StyledTableCell align="center">Số tín chỉ</StyledTableCell>
+              <StyledTableCell align="center">Thời gian học</StyledTableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          horizontal: 'left',
-        }}
-      >
-        <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
-      </Popover>
-    </TableContainer>
+          </TableHead>
+          {subjects &&
+            subjects.map((subject) => (
+              <TableBody sx={{ maxHeight: "300px" }} key={subject.id}>
+                <TableRow>
+                  <TableCell>
+                    <Button onClick={() => onOpenButton(subject.id)}>
+                      <KeyboardArrowUpIcon />
+                    </Button>
+                  </TableCell>
+                  <TableCell component="th" scope="row" align="center">
+                    {subject.id}
+                  </TableCell>
+                  <TableCell align="center">{subject.subject}</TableCell>
+                  <TableCell align="center">{subject.credit}</TableCell>
+                  <TableCell align="center">{subject.timing}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    style={{ paddingBottom: 0, paddingTop: 0 }}
+                    colSpan={6}
+                  >
+                    <Collapse in={open} timeout="auto" unmountOnExit>
+                      <Box sx={{ margin: 1 }}>
+                        <Typography variant="h6" gutterBottom component="div">
+                          Thông tin thầy cô
+                        </Typography>
+                        <Table size="small" aria-label="purchases">
+                          <TableHead>
+                            <TableRow>
+                              <TableCell>Tên giảng viên</TableCell>
+                              <TableCell>Bộ môn</TableCell>
+                              <TableCell align="right">Amount</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell component="th" scope="row">
+                                {subject.teacher}
+                              </TableCell>
+                              <TableCell>{subject.faculty}</TableCell>
+                              <TableCell align="right">HI</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </Box>
+                    </Collapse>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            ))}
+        </Table>
+      </TableContainer>
+    </Stack>
   );
-}
+};
 
+export default InfoSub;
