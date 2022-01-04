@@ -60,6 +60,15 @@ const GetRegis = (regis) => ({
   type: types.GET_REGIS,
   payload: regis,
 });
+// extra
+const getExtras = (extras) =>({
+  type:types.GET_EXTRAS,
+  payload :extras
+});
+const getExtra = (extra)=>({
+  type:types.GET_EXTRA,
+  payload: extra
+})
 
 export const loadUsers = () => {
   return function (dispatch) {
@@ -67,7 +76,7 @@ export const loadUsers = () => {
       .get("http://localhost:5001/regis")
       .then((resp) => {
         dispatch(getUsers(resp.data));
-        // console.log(resp.data);
+        console.log(resp.data);
       })
       .catch((error) => console.log(error));
   };
@@ -197,4 +206,28 @@ export const loadRegis = () => {
       })
       .catch((error) => console.log(error));
   };
+};
+
+//extras
+export const loadExtras = () => {
+  return function (dispatch) {
+    axios
+      .get("http://localhost:5001/extra")
+      .then((resp) => {
+        dispatch(getExtras(resp.data));
+      })
+      .catch((error) => console.log(error));
+  };
+};
+
+export const loadEachExtra = (id) => {
+    return function (dispatch) {
+      console.log(id);
+       axios.get(`http://localhost:5001/extra/${id}`).then((resp) => {
+        console.log(resp.data);
+        dispatch(getExtra(resp.data));
+        
+      });
+      
+    };
 };

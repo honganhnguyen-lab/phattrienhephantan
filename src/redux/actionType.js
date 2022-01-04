@@ -23,3 +23,8 @@ export const GET_SUB = "GET_SUB";
 export const ADD_REGIS = "ADD_REGIS";
 export const GET_REGIS = "GET_REGIS";
 export const DELETE_REGIS = "DELETE_REGIS";
+
+//Extra
+export const GET_EXTRAS = "GET_EXTRAS";
+export const GET_EXTRA = "GET_EXTRA";
+

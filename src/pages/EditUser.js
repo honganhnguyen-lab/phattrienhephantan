@@ -6,7 +6,7 @@ import { ClassNames } from '@emotion/react';
 import { Button } from '@mui/material';
 import {useHistory, useParams} from 'react-router-dom';
 import {useDispatch,useSelector} from "react-redux";
-import { getUser,updateUser } from '../redux/action';
+import { getUser,updateUser,loadEachExtra } from '../redux/action';
 
 
 
@@ -27,7 +27,7 @@ const EditUser = () => {
     const {name,email,contact,address} = state;
 
     useEffect(()=>{
-        dispatch(getUser(id))
+        dispatch(loadEachExtra(id))
     },[])
 
     useEffect(()=>{

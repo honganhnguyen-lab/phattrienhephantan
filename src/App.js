@@ -10,6 +10,8 @@ import ContainerInfo from './pages/Dashboard/ContainerInfo';
 import ContainerScore from './pages/Dashboard/ContainerScore';
 import ContainerSubject from './pages/Dashboard/ContainerSubject';
 
+import ContainerExtra from './pages/Dashboard/ContainerExtra';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
        <Route exact path = "/dashboard" component={ContainerInfo}/>
        <Route exact path="/score" component={ContainerScore}/>
        <Route exact path="/subject" component={ContainerSubject}/>
+       <Route exact path="/extra" component={ContainerExtra}/>
        <Route exact path = "/editUser/:id" component={EditUser}/>
 
      </Switch>

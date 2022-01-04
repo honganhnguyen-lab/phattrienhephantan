@@ -52,13 +52,7 @@ const MainListItems = () =>{
       <ListItemText primary="Đăng kí tín chỉ" />
     </ListItem>
     
-    <ListItem button className={classes.button} onClick={()=> history.push("/price")}>
-    <Avatar sx={{ m: 1,  bgcolor: 'white',color:'black' }}>
-        <LayersIcon />
-    </Avatar>
-      <ListItemText primary="Dữ liệu học phí" />
-    </ListItem>
-    <ListItem button className={classes.button} onClick={()=> history.push("/extraricular")}>
+    <ListItem button className={classes.button} onClick={()=> history.push("/extra")}>
     <Avatar sx={{ m: 1,  bgcolor: 'white',color:'black' }}>
         <LayersIcon />
     </Avatar>

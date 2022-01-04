@@ -42,17 +42,7 @@ const InfoSub = () => {
     setOpen(!open);
     console.log(id);
   };
-  // const DropButton = (id) => {
-  //   return (
-  //     <IconButton
-  //       aria-label="expand row"
-  //       size="small"
-  //       onClick={() => setOpen(!open)}
-  //     >
-  //       {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-  //     </IconButton>
-  //   );
-  // };
+
   return (
     <Stack direction="row" spacing={2}>
       <TableContainer sx={{ paddingLeft: "10px" }}>

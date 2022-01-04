@@ -13,6 +13,8 @@ const initialState = {
   transcript: {},
   subjects: [],
   subject: {},
+  extras: [],
+  extra:{}
 };
 
 const usersReducers = (state = initialState, action) => {
@@ -105,7 +107,19 @@ const usersReducers = (state = initialState, action) => {
         ...state,
         loading: false,
       };
-
+    //Extrs
+    case types.GET_EXTRAS:
+      return {
+        ...state,
+        extras: action.payload,
+        loading:false,
+      }
+    case types.GET_EXTRA:
+      return {
+        ...state,
+        extra: action.payload,
+        loading:false,
+      }
     //default
     default:
       return state;
