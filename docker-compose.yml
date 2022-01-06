@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+  api:
+    image: node:16
+    container_name: api
+    working_dir: /usr/src/app # thư mục lưu trữ 
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "5001:5001"
+    command: bash -c "npm install -g json-server && npm run server"
+
+  client:
+    image: node:16
+    container_name: client
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    command: npm run start
+
