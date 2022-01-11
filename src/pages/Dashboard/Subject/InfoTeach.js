@@ -23,22 +23,25 @@ const initialValues = {
   credits : '',
 };
 
-const options = [
-  {id:1, label: "AB10-An toàn thông tin", value: "AB10", credits: 2 },
-  {id:2, label: "IT20-ProjectII", value: "IT20", credits: 3 },
-  {id:3, label: "IT30-ProjectIII", value: "IT30", credits: 3 },
-  {id:4, label: "GT10-Giải tích I", value: "GT10", credits: 4 },
-  {id:5, label: "GT20-Giải tích II", value: "GT20", credits: 3 },
-  {id:6, label: "GT21-Giải tích II", value: "GT21", credits: 2 },
-  {id:7, label: "GT270-Giải tích II", value: "GT270", credits: 2 },
-  {id:8, label: "GT80-Giải tích II", value: "GT80", credits: 2 },
+const options =[
+  {id:1, label: "AB10-An toàn thông tin", value: "AB10", credits: 3},
+  {id:2, label: "IT20-ProjectII", value: "IT20", credits: 4 },
+  {id:3, label: "IT30-ProjectIII", value: "IT30", credits: 4 },
+  {id:4, label: "GT10-Giải tích I", value: "GT10", credits:5 },
+  {id:5, label: "GT20-Giải tích II", value: "GT20", credits: 4 },
+  {id:6, label: "GT21-Giải tích II", value: "GT21", credits: 3 },
+  {id:7, label: "GT270-Giải tích II", value: "GT270", credits: 3 },
+  {id:8, label: "GT80-Giải tích II", value: "GT80", credits: 3 },
 ];
 
 const InfoTeach = () => {
+  const [option,setOption] = useState(options);
   let dispatch = useDispatch();
   const onSubmit = (values) => {
-    const setValues = options.find(v=>v.value === values.occupation);
+    const setValues = option.find(v=>v.value === values.occupation);
+    const optional = option.filter(item => item !== setValues);
     values.credits = setValues.credits;
+    setOption(optional);
     dispatch(regisAdd(values));
     dispatch(loadRegis());
     
@@ -81,7 +84,7 @@ const InfoTeach = () => {
                             name="occupation"
                           >
                             <MenuItem>None</MenuItem>
-                            {options.map((item) => (
+                            {option.map((item) => (
                               
                               <MenuItem key={item.value} value={item.value}>
                                 {item.label}

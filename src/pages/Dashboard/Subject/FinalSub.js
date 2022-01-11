@@ -47,7 +47,7 @@ const FinalSub = () => {
   const totalCredits = Getcredits.reduce(
     (previousCredit, currentCredit, index)=>previousCredit+currentCredit, 
     0);
-  console.log(totalCredits);
+  
 
   const [open, setOpen] = React.useState(false);
   const [transition, setTransition] = React.useState(undefined);

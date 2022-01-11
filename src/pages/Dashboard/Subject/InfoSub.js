@@ -105,7 +105,7 @@ const InfoSub = () => {
                                 {subject.teacher}
                               </TableCell>
                               <TableCell>{subject.faculty}</TableCell>
-                              <TableCell align="right">HI</TableCell>
+                              <TableCell align="right">4</TableCell>
                             </TableRow>
                           </TableBody>
                         </Table>

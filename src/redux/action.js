@@ -187,6 +187,7 @@ export const regisAdd = (regis) => {
   return function (dispatch) {
     axios.post("http://localhost:5001/regis", regis).then((resp) => {
       dispatch(AddRegis(resp.data));
+      dispatch(loadRegis());
     });
   };
 };
@@ -194,6 +195,8 @@ export const regisDelete = (id) => {
   return function (dispatch) {
     axios.delete(`http://localhost:5001/regis/${id}`).then((resp) => {
       dispatch(deleRegis(resp.data));
+      dispatch(loadRegis());
+
     });
   };
 };
